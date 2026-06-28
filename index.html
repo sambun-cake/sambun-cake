@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiệm Bánh Ngọt - Bùi Xương Trạch</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #fff9f0; color: #333; }
+        header { background-color: #ff9a9e; color: white; text-align: center; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        nav { background: #fff; padding: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav a { margin: 0 15px; text-decoration: none; color: #ff9a9e; font-weight: bold; font-size: 1.1rem; }
+        section { padding: 40px 20px; max-width: 900px; margin: auto; }
+        /* Tinh chỉnh lại lưới menu một chút để hiển thị 5 món cho đẹp */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; justify-content: center; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
+        .card h3 { color: #ff6b81; margin-bottom: 5px; }
+        
+        .card .price { color: #e84118; font-size: 1.2rem; font-weight: bold; margin: 5px 0 10px 0; }
+        
+        .card p { font-size: 0.9rem; color: #666; margin-top: 0; }
+        form { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input, select, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 1rem; }
+        button { background-color: #ff6b81; color: white; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; font-size: 1.1rem; }
+        button:hover { background-color: #ff4757; }
+        .shipping-note { color: #e84118; font-weight: bold; text-align: center; background: #ffeaa7; padding: 10px; border-radius: 5px; margin-bottom: 15px; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header id="home">
+        <h1>🍰 Tiệm Bánh Nhà Làm 🍰</h1>
+        <p>Bánh ngon mỗi ngày - Đậm đà hương vị truyền thống & hiện đại</p>
+    </header>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#menu">Thực đơn</a>
+        <a href="#order">Đặt hàng</a>
+        <a href="#contact">Liên hệ</a>
+    </nav>
+
+    <section id="menu">
+        <h2 style="text-align: center; color: #ff4757;">✨ Best Seller Của Tiệm ✨</h2>
+        <div class="menu-grid">
+            <div class="card">
+                <img src="anh-1.jpg" alt="Bánh bò thốt nốt">
+                <h3>Bánh Bò Thốt Nốt</h3>
+                <div class="price">90.000đ / ổ</div>
+                <p>Thơm lừng mùi thốt nốt, rễ tre đều đặn, dai mềm ngọt thanh.</p>
+            </div>
+            
+            <div class="card" style="border: 2px solid #ff9a9e;"> <img src="anh-5.jpg" alt="Mix bò thốt nốt và da heo">
+                <h3>Mix Bò & Da Heo</h3>
+                <div class="price">75.000đ / hộp</div> <p>Sự kết hợp hoàn hảo: nửa bò thốt nốt xốp mềm và nửa da heo dẻo béo.</p>
+            </div>
+
+            <div class="card">
+                <img src="anh-2.jpg" alt="Crepe pudding">
+                <h3>Crepe Pudding</h3>
+                <div class="price">65.000đ / hộp</div>
+                <p>Lớp vỏ mỏng mịn cuộn trọn lớp kem pudding béo ngậy tan trong miệng.</p>
+            </div>
+            <div class="card">
+                <img src="anh-3.jpg" alt="Bánh da heo">
+                <h3>Bánh Da Heo</h3>
+                <div class="price">40.000đ / hộp</div>
+                <p>Cốt dẻo dẻo, nhiều lớp đan xen, thơm nức cốt dừa lá dứa.</p>
+            </div>
+            <div class="card">
+                <img src="anh-4.jpg" alt="Bánh chuối yến mạch">
+                <h3>Bánh Chuối Yến Mạch</h3>
+                <div class="price">70.000đ / ổ</div>
+                <p>Bánh eatclean xốp mềm, thơm mùi chuối chín, ăn kiêng giữ dáng cực tốt.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order">
+        <h2 style="text-align: center; color: #ff4757;">🛒 Đặt Bánh Giao Tận Nơi</h2>
+        <form id="orderForm" onsubmit="guiDonHang(event)">
+            <label>Tên của bạn:</label>
+            <input type="text" id="customerName" placeholder="Nhập tên..." required>
+
+            <label>Số điện thoại:</label>
+            <input type="tel" id="customerPhone" placeholder="Nhập số điện thoại..." required>
+
+            <label>Địa chỉ nhận bánh:</label>
+            <input type="text" id="customerAddress" placeholder="Số nhà, đường, quận/huyện..." required>
+
+            <label>Chọn món bánh:</label>
+            <select id="cakeType">
+                <option value="Bánh bò thốt nốt">Bánh bò thốt nốt</option>
+                <option value="Mix Bò & Da Heo">Mix Bò & Da Heo (MỚI)</option>
+                <option value="Crepe Pudding">Crepe Pudding</option>
+                <option value="Bánh da heo">Bánh da heo</option>
+                <option value="Bánh chuối yến mạch">Bánh chuối yến mạch</option>
+            </select>
+
+            <label>Số lượng:</label>
+            <input type="number" id="cakeQty" min="1" value="1" required>
+
+            <div class="shipping-note">
+                🛵 Miễn phí giao hàng bán kính 3km. Ngoại thành/Trên 3km tiệm sẽ báo phụ phí khi gọi điện chốt đơn.
+            </div>
+
+            <button type="submit">🚀 GỬI ĐƠN HÀNG</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2 style="text-align: center; color: #ff4757;">📍 Liên Hệ Tiệm</h2>
+        <div style="text-align: center; font-size: 1.1rem; line-height: 1.6;">
+            <p>🏠 <strong>Địa chỉ:</strong> Số 362 Bùi Xương Trạch, Định Công, Hoàng Mai, Hà Nội, Việt Nam</p>
+            <p>📞 <strong>Hotline:</strong> 0896.220.597</p>
+            <p><strong>Bản đồ chỉ đường:</strong></p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.110255395679!2d105.81804961540195!3d20.988218186020583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac8d2777b735%3A0xc3311ea3ecbf746f!2zMzYyIFAuIELDuWkgWMawxqFuZyBUcuG6oWNoLCDEkOG7i25oIEPDtG5nLCBIYWkgQsOgIFRyxrBuZywgS8OgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1688000000000!5m2!1sen!2s" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Bản quyền thuộc về SamBun Cake.</p>
+    </footer>
+
+    <script>
+        function guiDonHang(event) {
+            event.preventDefault(); 
+
+            // ⚠️ ĐIỀN LẠI TOKEN VÀ CHAT ID CỦA ÔNG VÀO ĐÂY NHÉ ⚠️
+            const TELEGRAM_TOKEN = '8616243538:AAHNpykE0oceIvZ60u8kyBAJeVsrsVcmaUI';
+            const CHAT_ID = '-1004340264973';
+
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('customerAddress').value;
+            const cake = document.getElementById('cakeType').value;
+            const qty = document.getElementById('cakeQty').value;
+
+            const text = `🔥 CÓ ĐƠN ĐẶT BÁNH MỚI 🔥\n\n👤 Khách: ${name}\n📞 SĐT: ${phone}\n🏠 Địa chỉ: ${address}\n🍰 Món: ${cake}\n📦 Số lượng: ${qty}\n\n🛵 Phí ship: Tiệm tự tính theo khoảng cách\n👉 Nhớ gọi khách chốt đơn nhé!`;
+
+            const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}`;
+
+            fetch(url)
+                .then(response => {
+                    if(response.ok) {
+                        alert('🎉 Đặt bánh thành công! Tiệm sẽ liên hệ với bạn sớm nhất nhé.');
+                        document.getElementById('orderForm').reset(); 
+                    } else {
+                        alert('❌ Có lỗi xảy ra, vui lòng thử lại.');
+                    }
+                })
+                .catch(error => {
+                    alert('❌ Lỗi kết nối mạng!');
+                });
+        }
+    </script>
+
+</body>
+</html>
