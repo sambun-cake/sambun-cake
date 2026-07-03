@@ -122,7 +122,7 @@
         <div class="cart-summary" id="cart-summary" style="display:none;">
             <div class="summary-row"><span>Tổng tiền hàng</span><span id="subtotal">0đ</span></div>
             <div class="summary-row summary-discount" id="discount-row" style="display:none;">
-                <span>🎉 Giảm giá Shopee (10%)</span><span id="discount-amt">0đ</span>
+                <span>🎉 Giảm giá Khách quen (10%)</span><span id="discount-amt">0đ</span>
             </div>
             <div class="summary-total"><span>💰 Tổng đơn hàng</span><span id="total-price">0đ</span></div>
             <div class="summary-final" id="final-row" style="display:none;"><span>✅ Thanh toán sau giảm giá</span><span id="final-price">0đ</span></div>
@@ -274,7 +274,7 @@
         if (hasDiscount) {
             var discount = Math.round(subtotal * 0.1);
             var final = subtotal - discount;
-            discountNote = '\n\n🎉 ƯU ĐÃI SHOPEE: Giảm 10%'
+            discountNote = '\n\n🎉 ƯU ĐÃI kHÁCH QUEN: Giảm 10%'
                 + '\n💰 Tổng hàng: ' + formatVND(subtotal)
                 + '\n🏷️ Giảm: -' + formatVND(discount)
                 + '\n✅ Thanh toán: ' + formatVND(final);
