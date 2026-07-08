@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Bun Cake - Bùi Xương Trạch</title>
+    <title>Sambun Cake - Bánh Ngọt & Matcha Hà Nội</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #fff9f0; color: #333; }
         header { background-color: #ff9a9e; color: white; text-align: center; padding: 2rem; }
         header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 8px 0 0; font-size: 1rem; opacity: 0.95; }
         nav { background: #fff; padding: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
         nav a { margin: 0 15px; text-decoration: none; color: #ff9a9e; font-weight: bold; font-size: 1.1rem; }
-        section { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
-        .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
-        .card h3 { color: #ff6b81; margin-bottom: 5px; }
-        .card .price { color: #e84118; font-size: 1.2rem; font-weight: bold; margin: 5px 0 10px 0; }
-        .card p { font-size: 0.9rem; color: #666; margin-top: 0; }
-        .btn-add { background: #ff6b81; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; margin-top: 8px; width: 100%; }
+        nav a:hover { color: #ff4757; }
+        section { padding: 40px 20px; max-width: 960px; margin: auto; }
+
+        /* MENU SECTION TITLE */
+        .menu-section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff4757;
+            border-left: 4px solid #ff9a9e;
+            padding-left: 12px;
+            margin: 2rem 0 1rem;
+        }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 2rem; }
+        .card { background: white; padding: 16px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); text-align: center; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+        .card h3 { color: #ff6b81; margin: 10px 0 4px; font-size: 15px; }
+        .card .desc { font-size: 12px; color: #888; margin: 0 0 8px; line-height: 1.5; min-height: 36px; }
+        .card .price { color: #e84118; font-size: 1.1rem; font-weight: bold; margin: 6px 0 10px; }
+        .btn-add { background: #ff6b81; color: white; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 13px; font-weight: bold; width: 100%; }
         .btn-add:hover { background: #ff4757; }
 
         /* GIỎ HÀNG */
@@ -65,8 +79,8 @@
 </div>
 
 <header id="home">
-    <h1>🍰 Tiệm Bánh Nhà Làm 🍰</h1>
-    <p>Bánh ngon mỗi ngày - Đậm đà hương vị truyền thống & hiện đại</p>
+    <h1>🍰 Sambun Cake 🍵</h1>
+    <p>Bánh ngọt handmade & Matcha Nhật cao cấp — Làm mới mỗi ngày</p>
 </header>
 
 <nav>
@@ -77,52 +91,116 @@
 </nav>
 
 <section id="menu">
-    <h2 style="text-align: center; color: #ff4757;">✨ Best Seller Của Tiệm ✨</h2>
+    <h2 style="text-align: center; color: #ff4757;">✨ Thực Đơn Sambun Cake ✨</h2>
+
+    <!-- BÁNH -->
+    <div class="menu-section-title">🍰 Các Loại Bánh</div>
     <div class="menu-grid">
         <div class="card">
-            <img src="anh-1.jpg" alt="Bánh bò thốt nốt">
+            <img src="anh-1.jpg" alt="Bánh Bò Thốt Nốt">
             <h3>Bánh Bò Thốt Nốt</h3>
-            <div class="price">90.000đ / ổ</div>
-            <p>Thơm lừng mùi thốt nốt, rễ tre đều đặn, dai mềm ngọt thanh.</p>
-            <button class="btn-add" onclick="themVaoGio('Bánh Bò Thốt Nốt', 90000)">🛒 Thêm vào giỏ</button>
+            <p class="desc">Nóng hổi mềm dai thơm ngon, làm từ thốt nốt sệt, có kèm cốt dừa chấm</p>
+            <div class="price">100.000đ / ổ</div>
+            <button class="btn-add" onclick="themVaoGio('Bánh Bò Thốt Nốt', 100000)">🛒 Thêm vào giỏ</button>
         </div>
         <div class="card">
-            <img src="anh-2.jpg" alt="Crepe pudding">
-            <h3>Crepe Pudding</h3>
-            <div class="price">75.000đ / hộp</div>
-            <p>Lớp vỏ mỏng mịn cuộn trọn lớp kem pudding béo ngậy tan trong miệng.</p>
-            <button class="btn-add" onclick="themVaoGio('Crepe Pudding', 75000)">🛒 Thêm vào giỏ</button>
+            <img src="anh-2.jpg" alt="Crepe Pudding Trà Xanh">
+            <h3>Crepe Pudding Trà Xanh</h3>
+            <p class="desc">Vỏ bánh crepe mix vị trà xanh, nhân kem whip + kem cheese, lớp pudding mềm mướt</p>
+            <div class="price">85.000đ / hộp</div>
+            <button class="btn-add" onclick="themVaoGio('Crepe Pudding Trà Xanh', 85000)">🛒 Thêm vào giỏ</button>
         </div>
         <div class="card">
-            <img src="anh-3.jpg" alt="Bánh da heo">
+            <img src="anh-3.jpg" alt="Bánh Da Heo">
             <h3>Bánh Da Heo</h3>
-            <div class="price">45.000đ / hộp</div>
-            <p>Cốt dẻo dẻo, nhiều lớp đan xen, thơm nức cốt dừa lá dứa.</p>
-            <button class="btn-add" onclick="themVaoGio('Bánh Da Heo', 45000)">🛒 Thêm vào giỏ</button>
+            <p class="desc">Cốt dẻo dẻo, nhiều lớp đan xen, thơm nức cốt dừa lá dứa</p>
+            <div class="price">50.000đ / hộp</div>
+            <button class="btn-add" onclick="themVaoGio('Bánh Da Heo', 50000)">🛒 Thêm vào giỏ</button>
         </div>
         <div class="card">
-            <img src="anh-4.jpg" alt="Bánh chuối yến mạch">
+            <img src="anh-4.jpg" alt="Bánh Chuối Yến Mạch">
             <h3>Bánh Chuối Yến Mạch</h3>
-            <div class="price">75.000đ / ổ</div>
-            <p>Bánh eatclean xốp mềm, thơm mùi chuối chín, ăn kiêng giữ dáng cực tốt.</p>
-            <button class="btn-add" onclick="themVaoGio('Bánh Chuối Yến Mạch', 75000)">🛒 Thêm vào giỏ</button>
+            <p class="desc">Bánh eatclean xốp mềm, thơm mùi chuối chín, ăn kiêng giữ dáng cực tốt</p>
+            <div class="price">90.000đ / ổ</div>
+            <button class="btn-add" onclick="themVaoGio('Bánh Chuối Yến Mạch', 90000)">🛒 Thêm vào giỏ</button>
+        </div>
+        <div class="card">
+            <img src="anh-5.jpg" alt="Bánh Bò Mix Da Heo">
+            <h3>Bánh Bò Mix Da Heo</h3>
+            <p class="desc">Sự kết hợp độc đáo giữa bánh bò thốt nốt và bánh da heo nhiều lớp</p>
+            <div class="price">60.000đ / hộp</div>
+            <button class="btn-add" onclick="themVaoGio('Bánh Bò Mix Da Heo', 60000)">🛒 Thêm vào giỏ</button>
+        </div>
+        <div class="card">
+            <img src="anh-6.jpg" alt="Tiramisu Matcha">
+            <h3>Tiramisu Matcha</h3>
+            <p class="desc">100% cốt bánh Lady Vicenzovo, vị matcha đắng nhẹ hòa quyện kem béo ngậy</p>
+            <div class="price">85.000đ / hộp</div>
+            <button class="btn-add" onclick="themVaoGio('Tiramisu Matcha', 850000)">🛒 Thêm vào giỏ</button>
+        </div>
+        <div class="card">
+            <img src="anh-7.jpg" alt="Tiramisu Cacao">
+            <h3>Tiramisu Cacao</h3>
+            <p class="desc">100% cốt bánh Lady Vicenzovo, vị cacao đậm đà quyện cùng kem mascarpone</p>
+            <div class="price">85.000đ / hộp</div>
+            <button class="btn-add" onclick="themVaoGio('Tiramisu Cacao', 850000)">🛒 Thêm vào giỏ</button>
+        </div>
+    </div>
+
+    <!-- NƯỚC -->
+    <div class="menu-section-title">🍵 Các Loại Nước Matcha</div>
+    <div class="menu-grid">
+        <div class="card">
+            <img src="anh-8.jpg" alt="Matcha Latte">
+            <h3>Matcha Latte</h3>
+            <p class="desc">Matcha Nhật kết hợp sữa thanh trùng, vị thanh mát cân bằng</p>
+            <div class="price">45.000đ</div>
+            <button class="btn-add" onclick="themVaoGio('Matcha Latte', 45000)">🛒 Thêm vào giỏ</button>
+        </div>
+        <div class="card">
+            <img src="anh-9.jpg" alt="Matcha Latte Xoài">
+            <h3>Matcha Latte Xoài</h3>
+            <p class="desc">Matcha Nhật kết hợp sữa và mứt xoài Homemade, ngọt thanh trái cây</p>
+            <div class="price">48.000đ</div>
+            <button class="btn-add" onclick="themVaoGio('Matcha Latte Xoài', 48000)">🛒 Thêm vào giỏ</button>
+        </div>
+        <div class="card">
+            <img src="anh-10.jpg" alt="Matcha Coldwhisk">
+            <h3>Matcha Coldwhisk</h3>
+            <p class="desc">Matcha Nhật kết hợp sữa lạnh sâu, đánh bông mịn, thơm ngon đặc biệt</p>
+            <div class="price">45.000đ</div>
+            <button class="btn-add" onclick="themVaoGio('Matcha Coldwhisk', 45000)">🛒 Thêm vào giỏ</button>
+        </div>
+        <div class="card">
+            <img src="anh-11.jpg" alt="Coco Matcha">
+            <h3>Coco Matcha</h3>
+            <p class="desc">Nước dừa foam Matcha Cheese, vị béo nhẹ thanh mát đặc trưng</p>
+            <div class="price">48.000đ</div>
+            <button class="btn-add" onclick="themVaoGio('Coco Matcha', 48000)">🛒 Thêm vào giỏ</button>
+        </div>
+        <div class="card">
+            <img src="anh-12.jpg" alt="Matcha Latte Dâu">
+            <h3>Matcha Latte Dâu</h3>
+            <p class="desc">Matcha Nhật kết hợp sữa và mứt dâu homemade, vị chua ngọt hài hòa</p>
+            <div class="price">48.000đ</div>
+            <button class="btn-add" onclick="themVaoGio('Matcha Latte Dâu', 48000)">🛒 Thêm vào giỏ</button>
         </div>
     </div>
 </section>
 
 <section id="order">
-    <h2 style="text-align: center; color: #ff4757;">🛒 Đặt Bánh Giao Tận Nơi</h2>
+    <h2 style="text-align: center; color: #ff4757;">🛒 Đặt Hàng Giao Tận Nơi</h2>
 
     <!-- GIỎ HÀNG -->
     <div class="cart-section">
         <div class="cart-title">🧺 Giỏ hàng của bạn</div>
         <div id="cart-items">
-            <div class="cart-empty" id="cart-empty">Chưa có món nào — bấm "Thêm vào giỏ" ở trên nhé!</div>
+            <div class="cart-empty">Chưa có món nào — bấm "Thêm vào giỏ" ở trên nhé!</div>
         </div>
         <div class="cart-summary" id="cart-summary" style="display:none;">
             <div class="summary-row"><span>Tổng tiền hàng</span><span id="subtotal">0đ</span></div>
             <div class="summary-row summary-discount" id="discount-row" style="display:none;">
-                <span>🎉 Giảm giá Khách quen (10%)</span><span id="discount-amt">0đ</span>
+                <span>🎉 Giảm giá khách quen(10%)</span><span id="discount-amt">0đ</span>
             </div>
             <div class="summary-total"><span>💰 Tổng đơn hàng</span><span id="total-price">0đ</span></div>
             <div class="summary-final" id="final-row" style="display:none;"><span>✅ Thanh toán sau giảm giá</span><span id="final-price">0đ</span></div>
@@ -136,7 +214,7 @@
         <label>Số điện thoại:</label>
         <input type="tel" id="customerPhone" placeholder="Nhập số điện thoại..." required>
 
-        <label>Địa chỉ nhận bánh:</label>
+        <label>Địa chỉ nhận hàng:</label>
         <input type="text" id="customerAddress" placeholder="Số nhà, đường, quận/huyện..." required>
 
         <div class="shipping-note">
@@ -150,20 +228,20 @@
 <section id="contact">
     <h2 style="text-align: center; color: #ff4757;">📍 Liên Hệ Tiệm</h2>
     <div style="text-align: center; font-size: 1.1rem; line-height: 1.6;">
-        <p>🏠 <strong>Địa chỉ:</strong> Số 362 Bùi Xương Trạch, Định Công, Hoàng Mai, Hà Nội, Việt Nam</p>
+        <p>🏠 <strong>Địa chỉ:</strong> Số 362 Bùi Xương Trạch, Định Công, Hoàng Mai, Hà Nội</p>
         <p>📞 <strong>Hotline:</strong> 0896.220.597</p>
         <p><strong>Bản đồ chỉ đường:</strong></p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.110255395679!2d105.81804961540195!3d20.988218186020583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac8d2777b735%3A0xc3311ea3ecbf746f!2zMzYyIFAuIELDuWkgWMawxqFuZyBUcuG6oWNoLCDEkOG7i25oIEPDtG5nLCBIYWkgQsOgIFRyxrBuZywgS8OgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1688000000000!5m2!1sen!2s" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.110255395679!2d105.81804961540195!3d20.988218186020583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac8d2777b735%3A0xc3311ea3ecbf746f!2zMzYyIFAuIELDuWkgWMawxqFuZyBUcuG6oWNoLCDEkOG7i25oIEPDtG5nLCBIYWkgQsOgIFRyxrBuZywgS8OgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1688000000000!5m2!1sen!2s" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Bản quyền thuộc về SamBun Cake.</p>
+    <p>© 2026 Bản quyền thuộc về SamBun Cake — Bánh ngọt & Matcha Hà Nội</p>
 </footer>
 
 <script>
     var hasDiscount = false;
-    var gio = {}; // { tên: { price, qty } }
+    var gio = {};
 
     window.onload = function() {
         var params = new URLSearchParams(window.location.search);
@@ -201,12 +279,11 @@
 
     function renderGio() {
         var container = document.getElementById('cart-items');
-        var empty = document.getElementById('cart-empty');
         var summary = document.getElementById('cart-summary');
-
         var keys = Object.keys(gio);
+
         if (keys.length === 0) {
-            container.innerHTML = '<div class="cart-empty" id="cart-empty">Chưa có món nào — bấm "Thêm vào giỏ" ở trên nhé!</div>';
+            container.innerHTML = '<div class="cart-empty">Chưa có món nào — bấm "Thêm vào giỏ" ở trên nhé!</div>';
             summary.style.display = 'none';
             return;
         }
@@ -231,7 +308,6 @@
 
         container.innerHTML = html;
         summary.style.display = 'block';
-
         document.getElementById('subtotal').textContent = formatVND(subtotal);
         document.getElementById('total-price').textContent = formatVND(subtotal);
 
@@ -247,10 +323,9 @@
 
     function guiDonHang(event) {
         event.preventDefault();
-
         var keys = Object.keys(gio);
         if (keys.length === 0) {
-            alert('Bạn chưa chọn món nào! Hãy thêm bánh vào giỏ trước nhé 🍰');
+            alert('Bạn chưa chọn món nào! Hãy thêm vào giỏ trước nhé 🍰');
             return;
         }
 
@@ -274,7 +349,7 @@
         if (hasDiscount) {
             var discount = Math.round(subtotal * 0.1);
             var final = subtotal - discount;
-            discountNote = '\n\n🎉 ƯU ĐÃI kHÁCH QUEN: Giảm 10%'
+            discountNote = '\n\n🎉 ƯU ĐÃI SHOPEE: Giảm 10%'
                 + '\n💰 Tổng hàng: ' + formatVND(subtotal)
                 + '\n🏷️ Giảm: -' + formatVND(discount)
                 + '\n✅ Thanh toán: ' + formatVND(final);
@@ -282,11 +357,11 @@
             discountNote = '\n\n💰 Tổng đơn hàng: ' + formatVND(subtotal);
         }
 
-        const text = '🔥 CÓ ĐƠN ĐẶT BÁNH MỚI 🔥'
+        const text = '🔥 CÓ ĐƠN ĐẶT MỚI 🔥'
             + '\n\n👤 Khách: ' + name
             + '\n📞 SĐT: ' + phone
             + '\n🏠 Địa chỉ: ' + address
-            + '\n\n🍰 Món đặt:' + danhSachMon
+            + '\n\n🛒 Món đặt:' + danhSachMon
             + discountNote
             + '\n\n🛵 Nhớ gọi khách chốt đơn nhé!';
 
@@ -295,7 +370,7 @@
         fetch(url)
             .then(function(response) {
                 if (response.ok) {
-                    alert('🎉 Đặt bánh thành công! Tiệm sẽ liên hệ với bạn sớm nhất nhé.');
+                    alert('🎉 Đặt hàng thành công! Tiệm sẽ liên hệ với bạn sớm nhất nhé.');
                     gio = {};
                     renderGio();
                     document.getElementById('orderForm').reset();
